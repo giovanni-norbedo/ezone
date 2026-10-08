@@ -1,0 +1,41 @@
+# Maintainer: Giovanni Norbedo <norbedo@proton.me>
+pkgname=ezone
+pkgver=0.1.0
+pkgrel=1
+pkgdesc="Ezone is a minimalist desktop music player that transforms your local digital audio collection into an interactive, vinyl-inspired record experience."
+arch=('x86_64')
+url="https://github.com/giovanni-norbedo/ezone"
+license=('GPL-3.0')
+depends=('gcc-libs' 'glibc' 'alsa-lib' 'libxkbcommon' 'wayland')
+makedepends=('cargo')
+
+source=("todo")
+sha256sums=('todo')
+
+prepare() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo fetch --locked --target "$(rustc -vV | sed -n 's/host: //p')"
+}
+
+build() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  export CARGO_TARGET_DIR=target
+  cargo build --frozen --release
+}
+
+check() {
+  cd "$pkgname-$pkgver"
+  export RUSTUP_TOOLCHAIN=stable
+  cargo test --frozen
+}
+
+package() {
+  cd "$pkgname-$pkgver"
+  
+  install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
+  
+  install -Dm644 ezone.desktop "$pkgdir/usr/share/applications/ezone.desktop"
+  install -Dm644 assets/icon.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/ezone.svg"
+}

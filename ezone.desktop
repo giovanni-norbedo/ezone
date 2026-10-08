@@ -1,0 +1,10 @@
+[Desktop Entry]
+Version=1.0
+Type=Application
+Name=Ezone
+Comment=A vinyl-inspired music player
+Exec=ezone
+Icon=ezone
+Terminal=false
+Categories=AudioVideo;Audio;Player;Music;
+StartupWMClass=ezone
