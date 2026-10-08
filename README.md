@@ -88,7 +88,7 @@ On Linux, ensure you have the required dependencies installed.
 You can build and install ezone locally using `makepkg`. Ensure you have the `base-devel` group installed on your system, then run:
 
 ```bash
-git clone [https://github.com/giovanni-norbedo/ezone.git](https://github.com/giovanni-norbedo/ezone.git)
+git clone https://github.com/giovanni-norbedo/ezone.git
 cd ezone/ezone-aur
 makepkg -si
 ```
