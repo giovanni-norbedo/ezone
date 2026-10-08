@@ -2,15 +2,15 @@
 pkgname=ezone
 pkgver=0.1.0
 pkgrel=1
-pkgdesc="Ezone is a minimalist desktop music player that transforms your local digital audio collection into an interactive, vinyl-inspired record experience."
+pkgdesc="ezone is a minimalist desktop music player that transforms your local digital audio collection into an interactive, vinyl-inspired record experience."
 arch=('x86_64')
 url="https://github.com/giovanni-norbedo/ezone"
 license=('GPL-3.0')
 depends=('gcc-libs' 'glibc' 'alsa-lib' 'libxkbcommon' 'wayland')
 makedepends=('cargo')
 
-source=("todo")
-sha256sums=('todo')
+source=("$pkgname-$pkgver.tar.gz::https://github.com/giovanni-norbedo/ezone/archive/refs/tags/v$pkgver.tar.gz")
+sha256sums=('944c5e255321da48e1ccf4c5ea8fab78aa5ac74259ce0211a8e80b86ae61a1af')
 
 prepare() {
   cd "$pkgname-$pkgver"

@@ -4,6 +4,16 @@ ezone is a simple, vinyl-inspired music player. It brings the fun of playing phy
 
 **Supported formats:** MP3, FLAC, WAV, OGG, M4A
 
+![](img/1.png)
+
+<details>
+<summary>Other views</summary>
+
+![](img/2.png)
+![](img/3.png)
+
+</details>
+
 ## Controls
 
 ezone relies mostly on simple keyboard shortcuts:
@@ -73,14 +83,14 @@ cargo build --release
 
 On Linux, ensure you have the required dependencies installed.
 
-### AUR
+### Arch Local build
 
-If you are on an arch-based distribution, you can install ezone from the AUR:
+You can build and install ezone locally using `makepkg`. Ensure you have the `base-devel` group installed on your system, then run:
 
 ```bash
-yay -S ezone
-# or
-paru -S ezone
+git clone [https://github.com/giovanni-norbedo/ezone.git](https://github.com/giovanni-norbedo/ezone.git)
+cd ezone/ezone-aur
+makepkg -si
 ```
 
 ## Contributing
