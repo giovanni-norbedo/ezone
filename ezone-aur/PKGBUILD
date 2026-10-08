@@ -37,5 +37,5 @@ package() {
   install -Dm755 "target/release/$pkgname" "$pkgdir/usr/bin/$pkgname"
   
   install -Dm644 ezone.desktop "$pkgdir/usr/share/applications/ezone.desktop"
-  install -Dm644 assets/icon.svg "$pkgdir/usr/share/icons/hicolor/scalable/apps/ezone.svg"
+  install -Dm644 assets/ezone.png "$pkgdir/usr/share/icons/hicolor/512x512/apps/ezone.png"
 }
